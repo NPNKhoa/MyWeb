@@ -1,0 +1,19 @@
+body {
+  display: grid;
+  margin: 0 auto;
+  border: 1px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+main {
+  display: grid;
+  border: 1px;
+  border-radius: 5px;
+  border-color: #ccc7c8;
+  padding: 0 5px;
+}
+
+aside {
+  margin: 2px;
+  padding: 5px;
+}
