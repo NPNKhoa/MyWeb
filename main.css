@@ -216,3 +216,26 @@ footer > a {
   background-size: 50px auto;
   background-repeat: no-repeat;
 }
+
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300px;
+  line-height: 34px;
+  margin: 12px 0 16px 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 28px;
+}
+
+h1::after {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin: 12px 0 16px 0;
+  width: 200px;
+  height: 3px;
+  content: "";
+  transform: skewX(-12deg) translateX(-50%);
+  background: radial-gradient(#cddc39, #fff);
+}
