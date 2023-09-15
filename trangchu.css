@@ -1,0 +1,79 @@
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300px;
+  line-height: 34px;
+  margin: 12px 0 16px 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 28px;
+}
+
+h1::after {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin: 12px 0 16px 0;
+  width: 200px;
+  height: 3px;
+  content: "";
+  transform: skewX(-12deg) translateX(-50%);
+  background: radial-gradient(#cddc39, #fff);
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300px;
+  line-height: 28px;
+  margin: 5px 0 10px 0;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300px;
+  line-height: 24px;
+  margin: 5px 0 10px 0;
+  text-align: center;
+  color: #f90b6d;
+  break-before: column;
+}
+
+.layout-2-col-article-right {
+  grid-column: 30% 69%;
+}
+
+.layout-2-col-article-left {
+  grid-column: 69% 30%;
+}
+section {
+  padding: 0 5px;
+  /* text-align: justify; */
+  /* color: #fff; */
+}
+
+#two-col div {
+  column-count: 2;
+}
+
+.right-cell > div {
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+#order-steps {
+  display: inline-block;
+  border: 1px;
+  border-color: #ed4190;
+  border-style: solid;
+  border-radius: 5px;
+  padding-top: 5px;
+  width: 24%;
+}
+
+#order-steps img {
+  width: 50%;
+}

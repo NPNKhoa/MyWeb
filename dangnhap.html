@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng Nhập</title>
+    <title>Trang Chủ</title>
     <link
       rel="shortcut icon"
       type="image/vnd.microsoft.icon"
-      href="/images/favicon.ico" />
-    <link rel="stylesheet" href="main.css" />
+      href="images/favicon.ico"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -21,7 +26,18 @@
         <a href="dangnhap.html">Đăng nhập</a>
         <a href="dangky.html">Đăng ký</a>
         <a href="lienhe.html">Liên hệ</a>
+
+        <div>
+          <input type="text" placeholder="Nhập nội dung cần tìm..." /><i
+            class="fas fa-search"
+          ></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
       </nav>
+
+      <img src="images/header-img1.png" alt="header-img1" id="header-img1" />
+      <img src="images/header-img2.png" alt="header-img2" id="header-img2" />
+      <img src="images/header-img3.png" alt="header-img3" id="header-img3" />
     </header>
 
     <main>
@@ -40,7 +56,8 @@
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Nhập email" />
+                  placeholder="Nhập email"
+                />
               </td>
             </tr>
             <tr>
@@ -50,7 +67,8 @@
                   type="password"
                   name="password"
                   id="password"
-                  placeholder="Nhập mật khẩu" />
+                  placeholder="Nhập mật khẩu"
+                />
               </td>
             </tr>
             <tr>
@@ -72,10 +90,10 @@
 
     <footer>
       &copy; 2021 Bản quyền thuộc về FreezeVN.
-      <a href="https://facebook.com">Facebook</a>
-      <a href="https://twitter.com">Twitter</a>
-      <a href="https://pinterest.com">Pinterest</a>
-      <a href="#top">Về đầu trang</a>
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://pinterest.com"><i class="fab fa-pinterest"></i></a>
+      <a href="#top" id="top-icon"></a>
     </footer>
   </body>
 </html>
