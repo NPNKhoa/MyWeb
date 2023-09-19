@@ -7,13 +7,11 @@
     <link
       rel="shortcut icon"
       type="image/vnd.microsoft.icon"
-      href="images/favicon.ico"
-    />
+      href="images/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
   </head>
   <body>
     <header>
@@ -29,8 +27,7 @@
 
         <div>
           <input type="text" placeholder="Nhập nội dung cần tìm..." /><i
-            class="fas fa-search"
-          ></i>
+            class="fas fa-search"></i>
           <i class="fas fa-shopping-cart"></i>
         </div>
       </nav>
@@ -40,78 +37,76 @@
       <img src="images/header-img3.png" alt="header-img3" id="header-img3" />
     </header>
 
-    <main>
-      <img src="images/trangchu/bg-home.jpg" alt="background" />
-      <h1>Liên Hệ</h1>
-      <img src="images/lienhe/check-in.png" alt="check-in" />
-      <h1>Địa Chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</h1>
-      <p>
-        Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu
-        mẫu bên dưới. Xin cảm ơn.
-      </p>
+    <main class="layout-1-col lienhe">
+      <!-- <img src="images/trangchu/bg-home.jpg" alt="background" /> -->
+      <div class="left-cell">
+        <h1>Liên Hệ</h1>
+        <p>
+          <img src="images/lienhe/check-in.png" alt="check-in" class="lienhe" />
+          <b>Địa Chỉ: 0123, Tòa Nhà ABC, TP. Cần Thơ</b>
+          Nếu bạn có góp ý, vui lòng liên hệ bằng thư điện tử hoặc sử dụng biểu
+          mẫu bên dưới. Xin cảm ơn.
+        </p>
+      </div>
 
       <form
         method="post"
         enctype="application/x-www-form-urlencoded"
         onsubmit="return false"
-      >
-        <fieldset>
-          <legend>Góp ý</legend>
-
-          <table>
-            <tr>
-              <td>
-                <label for="name">Họ Tên:</label>
-              </td>
-              <td>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Vui lòng nhập Họ tên của bạn"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="email">Email:</label></td>
-              <td>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Vui lòng nhập địa chỉ Email"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="topics">Chủ đề:</label></td>
-              <td>
-                <select name="topics" id="topics">
-                  <option value="product-service">Về Sản Phẩm/Dịch Vụ</option>
-                  <option value="member">Về Ưu Đãi Thành Viên</option>
-                  <option value="hire">Về Tin Tuyển Dụng</option>
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <td>Nội dung:</td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <textarea
-                  name="content"
-                  id="content"
-                  cols="50"
-                  rows="7"
-                  placeholder="Nội dung cần liên hệ"
-                ></textarea>
-              </td>
-            </tr>
-            <tr>
-              <th colspan="2"><input type="submit" value="Gửi" /></th>
-            </tr>
-          </table>
-        </fieldset>
+        class="article-cell">
+        <h1>Góp Ý</h1>
+        <table class="lienhe">
+          <tr>
+            <td>
+              <label for="name"><i class="fas fa-user"></i></label>
+            </td>
+            <td>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Vui lòng nhập Họ tên của bạn" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email"><i class="fas fa-envelope"></i></label>
+            </td>
+            <td>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Vui lòng nhập địa chỉ Email" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="topics"><i class="fas fa-list"></i></label>
+            </td>
+            <td>
+              <select name="topics" id="topics">
+                <option value="product-service">Về Sản Phẩm/Dịch Vụ</option>
+                <option value="member">Về Ưu Đãi Thành Viên</option>
+                <option value="hire">Về Tin Tuyển Dụng</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><i class="fas fa-sticky-note"></i></td>
+            <td colspan="2">
+              <textarea
+                name="content"
+                id="content"
+                cols="50"
+                rows="7"
+                placeholder="Nội dung cần liên hệ"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="submit" value="Gửi" /></td>
+          </tr>
+        </table>
       </form>
     </main>
 

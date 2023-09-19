@@ -25,6 +25,49 @@ header {
   grid-area: header-cell;
 }
 
+h1 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 34px;
+  margin: 12px 0 16px 0;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 28px;
+}
+
+h1::after {
+  display: block;
+  position: relative;
+  left: 50%;
+  margin: 2px 0 16px 0;
+  width: 200px;
+  height: 3px;
+  content: "";
+  transform: skewX(-12deg) translateX(-50%);
+  background: radial-gradient(#cddc39, #fff);
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 28px;
+  margin: 5px 0 10px 0;
+  text-align: center;
+  color: #f90b6d;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  line-height: 24px;
+  margin: 5px 0 10px 0;
+  text-align: center;
+  color: #f90b6d;
+  break-before: column;
+}
+
 @keyframes header-img1 {
   from {
     left: 80%;
@@ -217,55 +260,16 @@ footer > a {
   background-repeat: no-repeat;
 }
 
-.h1.trangchu {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300px;
-  line-height: 34px;
-  margin: 12px 0 16px 0;
-  text-transform: uppercase;
-  text-align: center;
-  color: #f90b6d;
-  font-size: 28px;
-}
-
-.h1.trangchu::after {
-  display: block;
-  position: relative;
-  left: 50%;
-  margin: 12px 0 16px 0;
-  width: 200px;
-  height: 3px;
-  content: "";
-  transform: skewX(-12deg) translateX(-50%);
-  background: radial-gradient(#cddc39, #fff);
-}
-
-.h2.trangchu {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300px;
-  line-height: 28px;
-  margin: 5px 0 10px 0;
-  text-align: center;
-  color: #f90b6d;
-  font-size: 24px;
-}
-
-.h3.trangchu {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 300px;
-  line-height: 24px;
-  margin: 5px 0 10px 0;
-  text-align: center;
-  color: #f90b6d;
-  break-before: column;
-}
-
 .layout-2-col-article-right.trangchu {
-  grid-column: 30% 69%;
+  grid-template-columns: 30% 23% 23% 23%;
 }
 
 .layout-2-col-article-left.trangchu {
-  grid-column: 69% 30%;
+  grid-template-columns: 23% 23% 23% 30%;
+}
+
+.trangchu img {
+  width: 100%;
 }
 
 section.trangchu {
@@ -296,4 +300,127 @@ article.trangchu > div {
 
 #order-steps img {
   width: 50%;
+}
+
+section.sanpham {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  color: #ed4190;
+}
+
+section.sanpham div {
+  display: flex;
+  margin: 3px;
+  border: 1px;
+  border-style: solid;
+  border-color: #dbd7d9;
+  padding: 0;
+  text-align: justify;
+  color: #000;
+  flex-direction: column;
+  background: linear-gradient(to top, #cddc39 0%, #fff 10%);
+}
+
+section.sanpham img {
+  display: block;
+  margin: auto;
+}
+
+section.sanpham h2 {
+  text-align: center;
+}
+
+section.sanpham div > * {
+  flex: 1;
+  min-width: 0;
+}
+
+section.sanpham span {
+  display: block;
+  margin: 4px;
+  padding: 3px;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  line-height: 2;
+}
+
+main.lienhe {
+  border: 3px;
+  border-color: #ccc7c8;
+  border-style: solid;
+  margin-top: 40px;
+}
+
+img.lienhe {
+  display: inline-block;
+  height: 20px;
+  background-color: #cddc39;
+  padding: 5px 15px;
+  border-radius: 0%;
+  margin-bottom: -7px;
+}
+
+table.lienhe {
+  margin: 0 auto;
+}
+
+.fas.fa-sticky-note {
+  margin-top: 90px;
+}
+
+table.lienhe i {
+  width: 18px;
+  display: block;
+  padding: 3px 6px;
+  background-color: #cddc39;
+  color: #fff;
+}
+
+main.gioithieu {
+  border: 3px;
+  border-color: #ccc7c8;
+  border-style: solid;
+}
+
+main.gioithieu p {
+  text-align: justify;
+}
+
+main.gioithieu img {
+  width: 100%;
+}
+
+.layout-2-col-article-left.gioithieu {
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+main.gioithieu > div {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.layout-2-col-article-right.tintuc {
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.layout-2-col-article-left.tintuc {
+  grid-template-columns: 20% 20% 20% 40%;
+}
+
+main.tintuc img {
+  width: 100%;
+}
+
+main.tintuc h2 {
+  text-align: left;
+}
+
+main.tintuc {
+  border: 3px;
+  border-color: #ccc7c8;
+  border-style: solid;
 }
