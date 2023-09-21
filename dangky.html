@@ -37,78 +37,85 @@
       <img src="images/header-img3.png" alt="header-img3" id="header-img3" />
     </header>
 
-    <main>
-      <img src="images/trangchu/bg-home.jpg" alt="background" />
-      <form method="post" enctype="multipart/form-data" onsubmit="return false">
-        <fieldset>
-          <legend>ĐĂNG KÝ</legend>
+    <main class="dangky">
+      <form
+        method="post"
+        enctype="multipart/form-data"
+        onsubmit="return false"
+        class="dangky">
+        <h1>ĐĂNG KÝ</h1>
 
-          <table>
-            <tr>
-              <td><label for="email">Email</label></td>
-              <td>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Vui lòng nhập email" />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="password">Mật khẩu</label></td>
-              <td>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Vui lòng nhập mật khẩu" />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="rp-password">Nhập lại một khẩu</label></td>
-              <td>
-                <input
-                  type="password"
-                  id="rp-password"
-                  name="rp-password"
-                  placeholder="Vui lòng nhập mật khẩu" />
-              </td>
-            </tr>
-            <tr>
-              <td><label for="silver">Cấp độ thành viên</label></td>
-              <td>
-                <input type="radio" id="silver" name="rank" value="silver" />
-                <label for="silver">Bạc</label>
+        <table class="dangky">
+          <tr>
+            <td>
+              <label for="email"><i class="fas fa-envelope"></i></label>
+            </td>
+            <td>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Vui lòng nhập email" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="password"><i class="fas fa-key"></i></label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Vui lòng nhập mật khẩu" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="rp-password"><i class="fas fa-key"></i></label>
+            </td>
+            <td>
+              <input
+                type="password"
+                id="rp-password"
+                name="rp-password"
+                placeholder="Vui lòng nhập mật khẩu" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="silver"><i class="fas fa-users"></i></label>
+            </td>
+            <td>
+              <input type="radio" id="silver" name="rank" value="silver" />
+              <label for="silver">Bạc</label>
 
-                <input type="radio" id="gold" name="rank" value="gold" />
-                <label for="gold">Vàng</label>
+              <input type="radio" id="gold" name="rank" value="gold" />
+              <label for="gold">Vàng</label>
 
-                <input
-                  type="radio"
-                  id="platinum"
-                  name="rank"
-                  value="platinum" />
-                <label for="platinum">Bạch Kim</label>
-              </td>
-            </tr>
-            <tr>
-              <td><label for="">Ảnh đại diện</label></td>
-              <td><input type="file" id="avatar" /></td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                Thông qua việc tạo tài khoản, bản đồng ý với
-                <a href="">Điều khoản & Quyền riêng tư của chúng tôi.</a>
-              </td>
-            </tr>
-            <tr>
-              <th colspan="2">
-                <input type="reset" value="Hủy" />
-                <input type="submit" value="Đăng ký" />
-              </th>
-            </tr>
-          </table>
-        </fieldset>
+              <input type="radio" id="platinum" name="rank" value="platinum" />
+              <label for="platinum">Bạch Kim</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="avatar"><i class="fas fa-id-badge"></i></label>
+            </td>
+            <td><input type="file" id="avatar" /></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              Thông qua việc tạo tài khoản, bản đồng ý với
+              <a href="">Điều khoản & Quyền riêng tư của chúng tôi.</a>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" value="Đăng ký" />
+              <input type="reset" value="Hủy" />
+            </td>
+          </tr>
+        </table>
       </form>
     </main>
 

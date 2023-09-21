@@ -234,10 +234,13 @@ footer {
   margin-top: 2px;
   border: 1px;
   border-color: #ccc7c8;
+  border-style: solid;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
   color: #000;
+  height: 100px;
+  padding-top: 15px;
 }
 
 footer > a {
@@ -423,4 +426,61 @@ main.tintuc {
   border: 3px;
   border-color: #ccc7c8;
   border-style: solid;
+}
+
+table.dangky i {
+  width: 20px;
+  text-align: center;
+  display: block;
+  padding: 3px 6px;
+  background-color: #cddc39;
+  color: #fff;
+}
+
+table.dangky {
+  margin: 0 auto;
+  width: 500px;
+}
+
+table.dangky tr label:first-child {
+  display: inline-block;
+  width: 20px;
+}
+
+main.dangky {
+  border: 3px;
+  border-color: #ccc7c8;
+  border-style: solid;
+  height: 300px;
+  margin-top: 100px;
+}
+
+main.dangnhap {
+  border: 3px;
+  border-color: #ccc7c8;
+  border-style: solid;
+  margin-top: 100px;
+}
+
+main.dangnhap img {
+  width: 200px;
+}
+
+table.dangnhap i {
+  width: 20px;
+  text-align: center;
+  display: block;
+  padding: 3px 6px;
+  background-color: #cddc39;
+  color: #fff;
+}
+
+table.dangnhap {
+  margin: 0 auto;
+  width: 500px;
+}
+
+table.dangnhap tr label:first-child {
+  display: inline-block;
+  width: 15px;
 }
