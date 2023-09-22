@@ -24,4 +24,6 @@ function Validate() {
   let passwd = document.getElementById("password");
   if (passwd.size < 8) {
   }
+
+  ///Thay doi
 }
