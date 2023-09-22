@@ -143,6 +143,10 @@ nav > div > i {
   background-color: #cddc39;
 }
 
+#search {
+  margin-right: 5px;
+}
+
 .fa-search {
   color: #fff;
 }
