@@ -28,7 +28,7 @@
         <div>
           <input type="text" placeholder="Nhập nội dung cần tìm..." /><i
             class="fas fa-search"></i>
-          <i class="fas fa-shopping-cart"></i>
+          <a href="donhang.html"><i class="fas fa-shopping-cart"></i></a>
         </div>
       </nav>
 
@@ -39,7 +39,7 @@
 
     <main class="dangnhap">
       <h1>ĐĂNG NHẬP</h1>
-      <form method="post" onsubmit="return false">
+      <form method="post" onsubmit="return frmValidate5(this);">
         <table class="dangnhap">
           <tr>
             <td colspan="2">
@@ -55,7 +55,8 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Nhập email" />
+                placeholder="Nhập email"
+                required />
             </td>
           </tr>
           <tr>
@@ -67,7 +68,9 @@
                 type="password"
                 name="password"
                 id="password"
-                placeholder="Nhập mật khẩu" />
+                placeholder="Nhập mật khẩu"
+                minlength="8"
+                required />
             </td>
           </tr>
 

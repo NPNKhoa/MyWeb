@@ -52,7 +52,7 @@
       <form
         method="post"
         enctype="application/x-www-form-urlencoded"
-        onsubmit="return false"
+        onsubmit="return frmValidate5(this);"
         class="article-cell">
         <h1>Góp Ý</h1>
         <table class="lienhe">
@@ -65,7 +65,8 @@
                 type="text"
                 name="name"
                 id="name"
-                placeholder="Vui lòng nhập Họ tên của bạn" />
+                placeholder="Vui lòng nhập Họ tên của bạn"
+                minlength="4" />
             </td>
           </tr>
           <tr>
@@ -100,7 +101,8 @@
                 id="content"
                 cols="50"
                 rows="7"
-                placeholder="Nội dung cần liên hệ"></textarea>
+                placeholder="Nội dung cần liên hệ"
+                minlength="10"></textarea>
             </td>
           </tr>
           <tr>

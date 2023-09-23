@@ -41,7 +41,7 @@
       <form
         method="post"
         enctype="multipart/form-data"
-        onsubmit="return false"
+        onsubmit="return frmValidate5(this);"
         class="dangky">
         <h1>ĐĂNG KÝ</h1>
 
@@ -55,7 +55,8 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Vui lòng nhập email" />
+                placeholder="Vui lòng nhập email"
+                required />
             </td>
           </tr>
           <tr>
@@ -67,7 +68,9 @@
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Vui lòng nhập mật khẩu" />
+                placeholder="Vui lòng nhập mật khẩu"
+                minlength="8"
+                required />
             </td>
           </tr>
           <tr>
@@ -79,7 +82,9 @@
                 type="password"
                 id="rp-password"
                 name="rp-password"
-                placeholder="Vui lòng nhập mật khẩu" />
+                placeholder="Vui lòng nhập mật khẩu"
+                minlength="8"
+                required />
             </td>
           </tr>
           <tr>
