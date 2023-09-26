@@ -136,7 +136,8 @@ nav > div {
   float: right;
 }
 
-nav > div > i {
+.fas.fa-shopping-cart,
+.fas.fa-search {
   padding: 4px;
   min-width: 30px;
   text-align: center;
@@ -487,4 +488,23 @@ table.dangnhap {
 table.dangnhap tr label:first-child {
   display: inline-block;
   width: 15px;
+}
+
+table.donhang {
+  border: 3px;
+  border-style: solid;
+  border-color: #ccc7c8;
+}
+
+table.donhang th {
+  border: 3px;
+  border-style: solid;
+  border-color: #ccc7c8;
+}
+
+table.donhang td {
+  border: 3px;
+  border-style: solid;
+  border-color: #ccc7c8;
+  text-align: right;
 }

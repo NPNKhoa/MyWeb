@@ -1,5 +1,5 @@
-let input = document.getElementById("search");
-let search_button = document.querySelector(".fas.fa-search");
+let search_input = document.querySelectorAll("header > div > input");
+let search_button = document.querySelectorAll(".fas.fa-search");
 
 function Submit() {
   let inputValue = input.value;
@@ -10,14 +10,12 @@ function Submit() {
   input.value = "";
 }
 
-input.addEventListener("keypress", function (event) {
-  if (event.keyCode === 13) {
-    Submit();
-  }
-});
-
-search_button.addEventListener("click", function (event) {
-  Submit();
+search_input.forEach(function () {
+  search_input.addEventListener("keypress", function () {
+    if (event.keyCode === 13) {
+      Submit();
+    }
+  });
 });
 
 function frmValidate5(frm) {
@@ -98,3 +96,12 @@ function addCart(code) {
     }
   }
 }
+
+let cart_button = document.querySelectorAll(".fas.fa-shopping-cart");
+
+cart_button.forEach(function (cart_button) {
+  cart_button.addEventListener("click", function () {
+    var donhang = "donhang.html";
+    window.open(donhang, "_blank");
+  });
+});

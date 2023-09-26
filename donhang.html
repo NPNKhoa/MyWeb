@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đơn hàng</title>
+    <link
+      rel="shortcut icon"
+      type="image/vnd.microsoft.icon"
+      href="images/favicon.ico" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <a href="trangchu.html"><img src="images/logo.png" alt="logo" /></a>
+      <nav>
+        <a href="trangchu.html">Trang chủ</a>
+        <a href="gioithieu.html">Giới thiệu</a>
+        <a href="sanpham.html">Sản phẩm</a>
+        <a href="tintuc.html">Tin tức</a>
+        <a href="dangnhap.html">Đăng nhập</a>
+        <a href="dangky.html">Đăng ký</a>
+        <a href="lienhe.html">Liên hệ</a>
+
+        <div>
+          <input
+            type="text"
+            class="serach"
+            placeholder="Nhập nội dung cần tìm..." />
+          <i class="fas fa-search"></i>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+      </nav>
+
+      <img src="images/header-img1.png" alt="header-img1" id="header-img1" />
+      <img src="images/header-img2.png" alt="header-img2" id="header-img2" />
+      <img src="images/header-img3.png" alt="header-img3" id="header-img3" />
+    </header>
+
+    <main>
+      <h1>CHI TIẾT ĐƠN HÀNG</h1>
+
+      <table class="donhang">
+        <thead>
+          <tr>
+            <th>Hình SP</th>
+            <th>Tên SP</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Thành Tiền</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6">Tổng thành tiền (A) = 0 đ</td>
+          </tr>
+          <tr>
+            <td colspan="6">Chiết khấu (B) = 0.1 x A = 0 đ</td>
+          </tr>
+          <tr>
+            <td colspan="6">Thuế (C) = 10% x (A - B) = 0 đ</td>
+          </tr>
+          <tr>
+            <td colspan="6">Tổng đơn hàng = A - B + C = 0 đ</td>
+          </tr>
+          <tr>
+            <td colspan="6"><button>Xác nhận đơn hàng</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      &copy; 2021 Bản quyền thuộc về FreezeVN.
+      <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+      <a href="https://pinterest.com"><i class="fab fa-pinterest"></i></a>
+      <a href="#top" id="top-icon"></a>
+    </footer>
+  </body>
+</html>
