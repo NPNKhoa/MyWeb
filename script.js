@@ -1,21 +1,23 @@
-let search_input = document.querySelectorAll("header > div > input");
-let search_button = document.querySelectorAll(".fas.fa-search");
+let search_input = document.querySelector("header div input");
+let search_button = document.querySelector(".fas.fa-search");
 
 function Submit() {
-  let inputValue = input.value;
+  let inputValue = search_input.value;
   inputValue = inputValue.trim();
   if (inputValue != "") {
-    alert(input.value);
+    alert(search_input.value);
   }
-  input.value = "";
+  search_input.value = "";
 }
 
-search_input.forEach(function () {
-  search_input.addEventListener("keypress", function () {
-    if (event.keyCode === 13) {
-      Submit();
-    }
-  });
+search_input.addEventListener("keypress", function (event) {
+  if (event.keyCode === 13) {
+    Submit();
+  }
+});
+
+search_button.addEventListener("click", function () {
+  Submit();
 });
 
 function frmValidate5(frm) {
@@ -97,11 +99,19 @@ function addCart(code) {
   }
 }
 
-let cart_button = document.querySelectorAll(".fas.fa-shopping-cart");
+let cart_button = document.querySelector(".fas.fa-shopping-cart");
 
-cart_button.forEach(function (cart_button) {
-  cart_button.addEventListener("click", function () {
-    var donhang = "donhang.html";
-    window.open(donhang, "_blank");
-  });
+cart_button.addEventListener("click", function () {
+  window.location.href = "donhang.html";
 });
+
+function showCart() {
+  let totalPreTax = 0;
+  for (const key in window.localStorage) {
+    item = itemList[key];
+    name = item.name;
+    price = item.price;
+    photo = item.photo;
+    orderNumber = localStorage.getItem(key);
+  }
+}
