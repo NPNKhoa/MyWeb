@@ -506,5 +506,28 @@ table.donhang td {
   border: 3px;
   border-style: solid;
   border-color: #ccc7c8;
+}
+
+table.donhang tfoot td {
   text-align: right;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.center-align {
+  text-align: center;
+}
+
+.fa.fa-trash.icon-pink {
+  padding: 4px;
+  min-width: 30px;
+  text-align: center;
+  background-color: #cddc39;
+  color: #ed4190;
 }
