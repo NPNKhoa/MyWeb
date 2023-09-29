@@ -1,21 +1,23 @@
-let search_input = document.querySelectorAll("header > div > input");
-let search_button = document.querySelectorAll(".fas.fa-search");
+let search_input = document.querySelector("header div input");
+let search_button = document.querySelector(".fas.fa-search");
 
 function Submit() {
-  let inputValue = input.value;
+  let inputValue = search_input.value;
   inputValue = inputValue.trim();
   if (inputValue != "") {
-    alert(input.value);
+    alert(search_input.value);
   }
-  input.value = "";
+  search_input.value = "";
 }
 
-search_input.forEach(function () {
-  search_input.addEventListener("keypress", function () {
-    if (event.keyCode === 13) {
-      Submit();
-    }
-  });
+search_input.addEventListener("keypress", function (event) {
+  if (event.keyCode === 13) {
+    Submit();
+  }
+});
+
+search_button.addEventListener("click", function () {
+  Submit();
 });
 
 function frmValidate5(frm) {
@@ -26,55 +28,55 @@ var itemList = {
   sp001: {
     name: "Sữa Chua Vị Kiwi",
     price: 21000,
-    photo: "images/sanpham/kiwi.jgp",
+    photo: "images/sanpham/kiwi.jpg",
   },
 
   sp002: {
     name: "Sữa Chua Vị Xoài",
     price: 22000,
-    photo: "images/sanpham/mango.jgp",
+    photo: "images/sanpham/mango.jpg",
   },
 
   sp003: {
     name: "Sữa Chua Vị Dưa Lưới",
     price: 23000,
-    photo: "images/sanpham/cantaloupe.jgp",
+    photo: "images/sanpham/cantaloupe.jpg",
   },
 
   sp004: {
     name: "Sữa Chua Vị Mâm Xôi",
     price: 24000,
-    photo: "images/sanpham/blackberry.jgp",
+    photo: "images/sanpham/blackberry.jpg",
   },
 
   sp005: {
     name: "Sữa Chua Vị Dâu Tây",
     price: 25000,
-    photo: "images/sanpham/strawberry.jgp",
+    photo: "images/sanpham/strawberry.jpg",
   },
 
   sp006: {
     name: "Sữa Chua Vị Việt Quất",
     price: 26000,
-    photo: "images/sanpham/blueberry.jgp",
+    photo: "images/sanpham/blueberry.jpg",
   },
 
   sp007: {
     name: "Sữa Chua Vị Bưởi",
     price: 27000,
-    photo: "images/sanpham/grapes.jgp",
+    photo: "images/sanpham/grapes.jpg",
   },
 
   sp008: {
     name: "Sữa Chua Vị Táo Xanh",
     price: 28000,
-    photo: "images/sanpham/green-apple.jgp",
+    photo: "images/sanpham/green-apple.jpg",
   },
 
   sp009: {
     name: "Sữa Chua Vị Dứa",
     price: 29000,
-    photo: "images/sanpham/pineapple.jgp",
+    photo: "images/sanpham/pineapple.jpg",
   },
 };
 
@@ -97,11 +99,77 @@ function addCart(code) {
   }
 }
 
-let cart_button = document.querySelectorAll(".fas.fa-shopping-cart");
+let cart_button = document.querySelector(".fas.fa-shopping-cart");
 
-cart_button.forEach(function (cart_button) {
-  cart_button.addEventListener("click", function () {
-    var donhang = "donhang.html";
-    window.open(donhang, "_blank");
-  });
+cart_button.addEventListener("click", function () {
+  window.location.href = "donhang.html";
 });
+
+function showCart() {
+  let totalPreTax = 0;
+  for (const key in window.localStorage) {
+    let item = itemList[key];
+    let name = item.name;
+    let price = item.price;
+    let photo = item.photo;
+    let orderNumber = localStorage.getItem(key);
+
+    let tr = document.createElement("tr");
+
+    let td_img = document.createElement("td");
+    let img = document.createElement("img");
+    let src = document.createAttribute("src");
+    src.value = photo;
+    img.setAttribute("width", "100px");
+    td_img.setAttribute("class", "center-align");
+    img.setAttributeNode(src);
+    td_img.appendChild(img);
+    tr.appendChild(td_img);
+
+    let td_name = document.createElement("td");
+    td_name.innerText = name;
+    td_name.setAttribute("class", "left-align");
+    tr.appendChild(td_name);
+
+    let td_num = document.createElement("td");
+    td_num.innerText = orderNumber;
+    td_num.setAttribute("class", "right-align");
+    tr.appendChild(td_num);
+
+    let td_price = document.createElement("td");
+    td_price.innerText = price + "đ";
+    td_price.setAttribute("class", "right-align");
+    tr.appendChild(td_price);
+
+    let td_total = document.createElement("td");
+    let total = parseInt(price) * parseInt(orderNumber);
+    td_total.innerText = total;
+    td_total.setAttribute("class", "right-align");
+    tr.appendChild(td_total);
+
+    let td_del = document.createElement("td");
+    let i = document.createElement("i");
+    i.setAttribute("class", "fa fa-trash icon-pink");
+    td_del.setAttribute("class", "center-align");
+    td_del.appendChild(i);
+    tr.appendChild(td_del);
+    i.addEventListener("click", removeCart(this.dataset.code));
+
+    let table = document.querySelector("table.donhang");
+    table.appendChild(tr);
+  }
+}
+
+window.onstorage = () => {
+  showCart();
+};
+
+function removeCart(code) {
+  if (typeof window.localStorage[code] != "undefined") {
+    window.localStorage.removeItem(code);
+    document
+      .getElementById("cartDetail")
+      .getElementsByTagName("tbody")[0].innerHTML = "";
+    showCart();
+  }
+}
