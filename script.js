@@ -83,7 +83,11 @@ var itemList = {
 function addCart(code) {
   let number = parseInt(document.getElementById(code).value);
   if (number > 100) {
-    alert("Invalid!");
+    alert("Số lượng đặt hàng không được vượt quá 100!");
+    return;
+  }
+  if (number == 0) {
+    alert("Số lượng đặt hàng phải lớn hơn 0!");
     return;
   }
   if (typeof localStorage[code] === "undefined") {
@@ -105,25 +109,27 @@ cart_button.addEventListener("click", function () {
   window.location.href = "donhang.html";
 });
 
+const VND = new Intl.NumberFormat("vi-VN", {
+  style: "currency",
+  currency: "VND",
+});
+
 function showCart() {
+  document
+    .getElementById("cartDetail")
+    .getElementsByTagName("tbody")[0].innerHTML = "";
   let totalPreTax = 0;
   for (const key in window.localStorage) {
-    let item = itemList[key];
-    let name = item.name;
-    let price = item.price;
-    let photo = item.photo;
+    let name = itemList[key].name;
+    let price = itemList[key].price;
+    let photo = itemList[key].photo;
     let orderNumber = localStorage.getItem(key);
 
     let tr = document.createElement("tr");
 
     let td_img = document.createElement("td");
-    let img = document.createElement("img");
-    let src = document.createAttribute("src");
-    src.value = photo;
-    img.setAttribute("width", "100px");
-    td_img.setAttribute("class", "center-align");
-    img.setAttributeNode(src);
-    td_img.appendChild(img);
+    td_img.innerHTML =
+      "<img src='" + photo + "' class='round-figure' width='100px' />";
     tr.appendChild(td_img);
 
     let td_name = document.createElement("td");
@@ -137,35 +143,42 @@ function showCart() {
     tr.appendChild(td_num);
 
     let td_price = document.createElement("td");
-    td_price.innerText = price + "đ";
+    td_price.innerText = VND.format(price);
     td_price.setAttribute("class", "right-align");
     tr.appendChild(td_price);
 
     let td_total = document.createElement("td");
     let total = parseInt(price) * parseInt(orderNumber);
+    total = VND.format(total);
     td_total.innerText = total;
     td_total.setAttribute("class", "right-align");
     tr.appendChild(td_total);
 
     let td_del = document.createElement("td");
+    let a = document.createElement("a");
+    a.setAttribute("href", "#");
+    a.setAttribute("data-code", key);
     let i = document.createElement("i");
     i.setAttribute("class", "fa fa-trash icon-pink");
     td_del.setAttribute("class", "center-align");
-    td_del.appendChild(i);
+    a.appendChild(i);
+    td_del.appendChild(a);
     tr.appendChild(td_del);
-    i.addEventListener("click", removeCart(this.dataset.code));
+    a.onclick = () => removeCart(key);
 
-    let table = document.querySelector("table.donhang");
-    table.appendChild(tr);
+    let tbody = document.querySelector("#cartDetail tbody");
+    tbody.appendChild(tr);
   }
 }
 
-window.onstorage = () => {
+window.onload = () => showCart();
+
+window.onstorage = function () {
   showCart();
 };
 
 function removeCart(code) {
-  if (typeof window.localStorage[code] != "undefined") {
+  if (window.localStorage[code]) {
     window.localStorage.removeItem(code);
     document
       .getElementById("cartDetail")
