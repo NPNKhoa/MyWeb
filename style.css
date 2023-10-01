@@ -531,3 +531,7 @@ table.donhang tfoot td {
   background-color: #cddc39;
   color: #ed4190;
 }
+
+.fa.fa-trash.icon-pink:hover {
+  cursor: pointer;
+}
