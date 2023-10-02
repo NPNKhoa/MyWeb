@@ -119,6 +119,9 @@ function showCart() {
     .getElementById("cartDetail")
     .getElementsByTagName("tbody")[0].innerHTML = "";
   let totalPreTax = 0;
+  let discount = 0;
+  let tax = 0;
+  let totalPrice = 0;
   for (const key in window.localStorage) {
     let name = itemList[key].name;
     let price = itemList[key].price;
@@ -168,14 +171,18 @@ function showCart() {
 
     let tbody = document.querySelector("#cartDetail tbody");
     tbody.appendChild(tr);
+
+    totalPreTax = totalPreTax + price * orderNumber;
+    discount = totalPreTax * getDiscountRate();
+    tax = (totalPreTax - discount) * 0.1;
+    totalPrice = totalPreTax - discount + tax;
+    let l = document.querySelectorAll("#cartDetail tfoot span");
+    l[0].textContent = VND.format(totalPreTax);
+    l[1].textContent = VND.format(discount);
+    l[2].textContent = VND.format(tax);
+    l[3].textContent = VND.format(totalPrice);
   }
 }
-
-window.onload = () => showCart();
-
-window.onstorage = function () {
-  showCart();
-};
 
 function removeCart(code) {
   if (window.localStorage[code]) {
@@ -186,3 +193,25 @@ function removeCart(code) {
     showCart();
   }
 }
+
+function getDiscountRate() {
+  var d = new Date();
+  var weekDay = d.getDay();
+  var totalMins = d.getHours() * 60 + d.getMinutes();
+
+  if (
+    weekDay >= 1 &&
+    weekDay <= 3 &&
+    ((totalMins >= 420 && totalMins <= 660) ||
+      (totalMins >= 780 && totalMins <= 1020))
+  ) {
+    return 0.1;
+  }
+  return 0;
+}
+
+window.onload = () => showCart();
+
+window.onstorage = function () {
+  showCart();
+};
